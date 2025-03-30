@@ -1,58 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode" />
     <title>Recipe Sharing App</title>
 </head>
 <body>
-    <header>Recipe Sharing App</header>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Add Recipe</a>
-        <a href="#">View Recipe</a>
-    </nav>
+
+    <header>
+        <h1>Recipe Sharing App</h1>
+        <nav>
+            <a href="#" onclick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('addRecipe')">Add Recipe</a>
+            <a href="#" onclick="showSection('viewRecipes')">View Recipes</a>
+            <button id="darkModeToggle">🌙</button>
+        </nav>
+    </header>
+
     <section id="home" class="section">
         <h2>Welcome to the Recipe Sharing Platform</h2>
-        <p> Explore a variety of Recipe and add your own!</p>
+        <p>Explore a variety of recipes and add your own!</p>
     </section>
 
     <section id="addRecipe" class="section hidden">
-        <h2>Add a new Recipe</h2>
-        <form >
-            <label for="RecipeName">Recipe Name:</label>
-            <input type="text" id="RecipeName" required>
-            
-            <label for="Ingridients">Ingridients:</label>
-            <textarea  id="Ingridients" rows="4" required></textarea>
+        <h2>Add a New Recipe</h2>
+        <form id="recipeForm">
+            <label for="recipeName">Recipe Name:</label>
+            <input type="text" id="recipeName" required />
 
-            <label for="Category">Category:</label>
-            <select  id="Category" required>
-                <option value="BreakFast">BreakFast</option>
+            <label for="ingredients">Ingredients (comma-separated):</label>
+            <textarea id="ingredients" rows="4" required></textarea>
+
+            <label for="category">Category:</label>
+            <select id="category" required>
+                <option value="Breakfast">Breakfast</option>
                 <option value="Lunch">Lunch</option>
                 <option value="Dinner">Dinner</option>
                 <option value="Dessert">Dessert</option>
                 <option value="Drinks">Drinks</option>
             </select>
-            <label>Preparation Steps:</label>
-            <textarea  id="Steps" rows="6" required></textarea>
+
+            <label for="steps">Preparation Steps:</label>
+            <textarea id="steps" rows="6" required></textarea>
+
             <button type="submit">Add Recipe</button>
         </form>
     </section>
 
     <section id="viewRecipes" class="section hidden">
         <h2>View Recipes</h2>
-        <label for="filterCategory">Filter By Category:</label>
-        <select  id="filterCategory">
+        <label for="filterCategory">Filter by Category:</label>
+        <select id="filterCategory" onchange="filterRecipes()">
             <option value="all">All</option>
-            <option value="BreakFast">BreakFast</option>
+            <option value="Breakfast">Breakfast</option>
             <option value="Lunch">Lunch</option>
             <option value="Dinner">Dinner</option>
             <option value="Dessert">Dessert</option>
             <option value="Drinks">Drinks</option>
         </select>
-        <div></div>
+        <div id="recipesContainer"></div>
     </section>
+
+    <script src="js/app.js"></script>
 </body>
 </html>
