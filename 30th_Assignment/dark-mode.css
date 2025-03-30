@@ -1,0 +1,18 @@
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+header.dark-mode {
+    background: linear-gradient(to right, #333, #555);
+}
+
+form.dark-mode, .recipe-card.dark-mode {
+    background: #333;
+    color: white;
+}
+
+nav a.dark-mode {
+    color: #e0e0e0;
+}
