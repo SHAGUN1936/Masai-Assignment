@@ -13,7 +13,6 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     if (snapshot.exists()) {
       const role = snapshot.val().role;
       sessionStorage.setItem("userRole", role);
-
       window.location.href = role === "admin" ? "admin-dashboard.html" : "user-dashboard.html";
     }
   } catch (err) {
