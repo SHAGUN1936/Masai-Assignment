@@ -21,7 +21,8 @@
 
     const { useState, useEffect } = React;
 
-    const firebaseURL = 'https://YOUR_FIREBASE_DATABASE_URL_HERE/feedbacks.json'; 
+    const baseFirebaseURL = 'https://feedback-form-1ac5e-default-rtdb.firebaseio.com/';
+const firebaseURL = `${baseFirebaseURL}feedbacks.json`;
 
     function FeedbackForm({ fetchFeedbacks }) {
       const [name, setName] = useState('');
@@ -95,9 +96,7 @@
 
       const handleDelete = async () => {
         try {
-          await fetch(`https://console.firebase.google.com/u/0/project/feedback-form-1ac5e/firestore/databases/-default-/data/feedbacks/${id}.json`, {
-            method: 'DELETE',
-          });
+            await fetch(`${baseFirebaseURL}feedbacks/${id}.json`, { method: 'DELETE' });
           fetchFeedbacks();
         } catch (error) {
           console.error("Failed to delete feedback");
