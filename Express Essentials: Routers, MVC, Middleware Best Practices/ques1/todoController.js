@@ -1,4 +1,4 @@
-const { readData, writeData } = require('../models/todoModel');
+const { readData, writeData } = require('../todoModel');
 
 let idCounter = 1;
 
