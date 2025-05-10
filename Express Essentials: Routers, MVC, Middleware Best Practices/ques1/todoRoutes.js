@@ -1,7 +1,7 @@
 const express = require('express');
 const {
   getTodos, addTodo, updateTodo, deleteTodo, searchTodos
-} = require('../controllers/todoController');
+} = require('../todoController');
 
 const router = express.Router();
 
