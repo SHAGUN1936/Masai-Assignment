@@ -17,3 +17,12 @@ This is a simple Ticketing System built using Express.js for internal issue trac
 2. Install dependencies:
    ```bash
    npm install
+3. Start the server:
+node server.js
+
+4. The server will run on port 3000 by default.
+### Running the App
+Run the application with the following command:
+bash
+node server.js
+This will start the server on http://localhost:3000, and you can use tools like Postman or curl to test the endpoints.
